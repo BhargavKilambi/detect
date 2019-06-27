@@ -1,0 +1,24 @@
+
+<ion-header>
+
+  <ion-navbar color="dark" >
+    <ion-title>Notes</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-item *ngIf="count=='0'||count===0||count==0">
+    <p text-wrap> No notes to view :( </p>
+  </ion-item>
+<ion-list *ngIf="count!=0">
+  <ion-list-header>
+    Your Notes
+  </ion-list-header>
+  <ion-item *ngFor="let note of noteslist">
+    <p> {{note.num}} </p>
+    <ion-icon md="ios-mic" (tap)="speak(note.note)" item-end></ion-icon>
+  </ion-item>
+</ion-list>
+</ion-content>
